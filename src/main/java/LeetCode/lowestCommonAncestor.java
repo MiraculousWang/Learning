@@ -32,13 +32,6 @@ import LeetCode.base.TreeNode;
 import java.util.Stack;
 
 public class lowestCommonAncestor {
-  public static void main(String[] args){
-    new Solution().lowestCommonAncestor(null,null,null);
-  }
-
-}
-
-class Solution {
 
   public TreeNode answer(TreeNode root, TreeNode p, TreeNode q){
 
@@ -66,8 +59,6 @@ class Solution {
 
     return cuuNode;
   }
-
-
 
   public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
     if (root== null || p == null || q == null){ return null; }

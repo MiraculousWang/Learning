@@ -25,17 +25,6 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 public class buildTree {
-  public static void main(String[] args){
-
-    new buildTreeSolution().buildTree(
-        new int[]{15,9,10,3,20,5,7,8,4},
-        new int[]{15,10,9,5,4,8,7,20,3});
-
-
-  }
-}
-
-class buildTreeSolution {
 
   public TreeNode buildTree(int[] inorder, int[] postorder){
     if (inorder == null || postorder == null){return null;}

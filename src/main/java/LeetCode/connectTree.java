@@ -1,10 +1,5 @@
 package LeetCode;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Queue;
-import java.util.Stack;
-
 class Node {
   public int val;
   public Node left;
@@ -26,12 +21,6 @@ class Node {
 };
 
 public class connectTree {
-  public static void main(String[] args){
-    new connectSolution().connect(null);
-  }
-}
-
-class connectSolution {
   public Node connect(Node root) {
     if (root == null){return null;}
     Node cuuParentNode = root;

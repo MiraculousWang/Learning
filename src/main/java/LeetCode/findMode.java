@@ -24,12 +24,7 @@ import LeetCode.base.TreeNode;
 import java.util.Stack;
 
 public class findMode {
-  public static void main(String[] args){
-    new findModeSolution().findMode(new TreeNode(0));
-  }
-}
 
-class findModeSolution {
   public int[] findMode(TreeNode root) {
     if (root == null){ return null;}
     Stack<TreeNode> tmp = new Stack();
