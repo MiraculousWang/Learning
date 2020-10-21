@@ -34,15 +34,6 @@ import java.util.List;
 
 public class commonChars {
 
-  public static void main(String[] arg){
-
-    String[] A = {"bella","label","roller"};
-
-    List reslut = new commonChars().commonChars(A);
-
-    System.out.println(reslut.toString());
-  }
-
   public List<String> commonChars(String[] A) {
 
     int[] minCharCount = getCharCount(A[0].toCharArray());
