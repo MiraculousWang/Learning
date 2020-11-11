@@ -32,7 +32,7 @@ import java.util.List;
 
 
 public class swapPairs {
-
+  // 解
   // 非递归写法
   public ListNode swapPairs(ListNode head) {
     if (head == null || head.next == null){return head;}
