@@ -1,5 +1,8 @@
 package LeetCode;
 
+
+// 判断一个链表中有没有环， 快慢指针
+
 import LeetCode.base.ListNode;
 
 public class hasCycle {

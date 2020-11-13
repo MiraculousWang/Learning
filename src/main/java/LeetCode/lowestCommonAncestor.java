@@ -31,69 +31,16 @@ package LeetCode;
 import LeetCode.base.TreeNode;
 import java.util.Stack;
 
+// 解 用到二叉搜索树的特性就很简单
 public class lowestCommonAncestor {
-
-  public TreeNode answer(TreeNode root, TreeNode p, TreeNode q){
-
-    if (root.val > p.val && root.val > q.val){
-      answer(root.left,p,q);
-    }
-    if (root.val < p.val && root.val < q.val){
-      answer(root.right,p,q);
+  public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    while (p != root && q != root && ((p.val < root.val) ^ (q.val > root.val))){
+      if (p.val < root.val){
+        root = root.left;
+      }else{
+        root = root.right;
+      }
     }
     return root;
-  }
-
-  public TreeNode answer2(TreeNode root, TreeNode p, TreeNode q){
-    TreeNode cuuNode = root;
-    while (cuuNode!= null){
-      if (cuuNode.val > p.val && cuuNode.val > q.val){
-        cuuNode = cuuNode.left;
-      } else if (cuuNode.val < p.val && cuuNode.val < q.val){
-        cuuNode = cuuNode.right;
-      }
-      else {
-        return cuuNode;
-      }
-    }
-
-    return cuuNode;
-  }
-
-  public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-    if (root== null || p == null || q == null){ return null; }
-    if (p == q){return p;}
-
-    Stack<TreeNode> pStack = findNode(root,p);
-    Stack<TreeNode> qStack = findNode(root,q);
-    while (!pStack.empty() ||! qStack.empty()){
-      if (pStack.size() != qStack.size()){
-        if (pStack.size() > qStack.size()){
-          if (pStack.pop().val == qStack.peek().val){ return qStack.peek(); }
-        }else {
-          if (qStack.pop().val == pStack.peek().val){ return pStack.peek(); }
-        }
-      }else {
-        if (pStack.peek().val == qStack.peek().val){
-          return pStack.pop();
-        }
-        pStack.pop();
-        qStack.pop();
-      }
-    }
-
-    return null;
-
-  }
-
-  public Stack<TreeNode> findNode(TreeNode root ,TreeNode target){
-    Stack<TreeNode> pStack = new Stack<>();
-    pStack.push(root);
-    while (root.val != target.val){
-      root = root.val > target.val ? root.left : root.right;
-      pStack.push(root);
-      if (root== null){ return null; }
-    }
-    return pStack;
   }
 }
