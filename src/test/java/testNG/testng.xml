@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="stest" parallel="tests" thread-count="4">
+
+  <listeners>
+    <listener class-name="testNG.MyRetry"></listener>
+  </listeners>
+
+  <parameter name="Parameter_Name" value="测试NG"></parameter>
+  <parameter name="Parameter_Count" value="1234"></parameter>
+
+
+  <test name="testNG">
+
+    <classes>
+      <class name="testNG.testGroups">
+        <methods>
+          <exclude name="linux.*"></exclude>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+</suite>
+
