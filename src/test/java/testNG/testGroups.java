@@ -1,11 +1,18 @@
 package testNG;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 // class 上加了test可以作用到下面的函数
 // class 中的group可以作用到类中所有的方法
 @Test(groups = { "all" })
-public class testGroups {
+public class testGroups extends testNGBase {
+
+  @BeforeClass
+  public void beforeClass(){
+    System.out.println("testGroups : beforeClass");
+
+  }
 
   private int FactoryId;
   public testGroups(int factoryId){

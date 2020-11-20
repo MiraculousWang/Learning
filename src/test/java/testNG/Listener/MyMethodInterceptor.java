@@ -15,6 +15,12 @@ import org.testng.annotations.Test;
 
 public class MyMethodInterceptor implements IMethodInterceptor {
 
+
+  // 修改方法在List<IMethodInstance>中的顺序来实现，用例执行顺序的控制
+  // 示例修改的比较暴力，直接往第一个插入。
+  // 用例多了的话，实现用例的合理顺序控制会有难度。毕竟在List里的其他方法的位置定位会比较困难
+  // 感觉还是用group在XML中实现依赖会比较容易和方便
+
   @Override
   public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
     List<IMethodInstance> result = new ArrayList<IMethodInstance>();

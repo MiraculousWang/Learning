@@ -3,7 +3,7 @@
 <suite name="stest" parallel="tests" thread-count="4">
 
   <listeners>
-    <listener class-name="testNG.MyRetry"></listener>
+    <listener class-name="testNG.Listener.MyTestListener"></listener>
   </listeners>
 
   <parameter name="Parameter_Name" value="测试NG"></parameter>
