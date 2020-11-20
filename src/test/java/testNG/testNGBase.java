@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+
 public class testNGBase {
 
   @BeforeSuite
@@ -26,7 +27,7 @@ public class testNGBase {
   }
 
 
-  @Test
+  @Test(description = "testLinuxOnly")
   public void testLinuxOnly() {
     System.out.println("testLinuxOnly");
   }
@@ -37,6 +38,11 @@ public class testNGBase {
   @Test(threadPoolSize = 3, invocationCount = 10,  timeOut = 10000)
   public void testThread(){
 
+  }
+
+  @Test(retryAnalyzer = MyRetry.class)
+  public void testRetryListeners() {
+    System.out.println("testLinuxOnly");
   }
 
   @AfterMethod
