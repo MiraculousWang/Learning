@@ -35,10 +35,10 @@ public class testNGBase {
   // threadPoolSize 线程池大小
   // invocationCount 总共运行多少次
   // timeOut 线程执行10秒后, 判定超时自动退出
-//  @Test(threadPoolSize = 3, invocationCount = 10,  timeOut = 10000)
-//  public void testThread(){
-//
-//  }
+  @Test(threadPoolSize = 3, invocationCount = 10,  timeOut = 10000)
+  public void testThread(){
+    System.out.println("testThread");
+  }
 
   @Test(retryAnalyzer = MyRetry.class)
   public void testRetryListeners() {
