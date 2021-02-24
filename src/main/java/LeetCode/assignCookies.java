@@ -31,6 +31,7 @@ import java.util.Arrays;
 
 public class assignCookies {
 
+  // 解
   public int assignCookies(int g[], int s[]){
 
     Arrays.sort(s);

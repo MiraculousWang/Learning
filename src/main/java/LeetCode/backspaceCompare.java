@@ -47,6 +47,9 @@ package LeetCode;
 //
 
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class backspaceCompare {
 
   public static void main(String[] args){
@@ -93,4 +96,31 @@ public class backspaceCompare {
     return true;
   }
 
+  public static class addtoarrayformofinteger {
+    public List<Integer> addToArrayForm(int[] A, int K) {
+      LinkedList<Integer> resultList = new LinkedList<Integer>();
+
+      int index = A.length - 1;
+      while(K != 0 || index >= 0){
+        int AddNum = K - K/10*10;
+        K = K/10;
+
+        if (index >= 0){
+          int head = AddNum + A[index--];
+          if (head >= 10){ K++;}
+          resultList.addFirst(head % 10);
+        }else {
+          resultList.add(AddNum);
+        }
+      }
+
+      return resultList;
+    }
+
+    public static void main(String[] args){
+      int A[] = {9,9,9,9};
+      System.out.println(new addtoarrayformofinteger().addToArrayForm(A,34).toString());
+    }
+
+  }
 }
